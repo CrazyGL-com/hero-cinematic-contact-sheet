@@ -1,0 +1,430 @@
+{
+  "name": "Cinematic Contact Sheet",
+  "slug": "cinematic-contact-sheet",
+  "version": 1,
+  "description": "Multiple frames behave like a cinematic contact sheet, bending through depth and holding a warm editorial mood.",
+  "dependencies": [
+    "three"
+  ],
+  "authorName": "@ybouane",
+  "authorUrl": "https://x.com/ybouane",
+  "tags": [
+    "three",
+    "3d",
+    "screenshot",
+    "stack",
+    "cards",
+    "saas",
+    "templates",
+    "dashboards",
+    "modules",
+    "editorial",
+    "portfolio"
+  ],
+  "category": "Portfolio",
+  "featured": false,
+  "poster": "/images/heroes/card-stack.png",
+  "install": {
+    "package": "@crazygl/hero-cinematic-contact-sheet"
+  },
+  "config": {
+    "managedWidth": true,
+    "innerWidth": 1100,
+    "managedHeight": true,
+    "defaultHeight": 760,
+    "styleInheritance": "none",
+    "usesCanvas": true,
+    "usesWebGL": true,
+    "usesThree": true,
+    "pointerTracking": true,
+    "resizeTracking": true,
+    "interactive": true,
+    "supportsImages": true,
+    "supportsFontCustomization": true,
+    "interactivityModes": [
+      "pointer",
+      "none"
+    ],
+    "interactivity": "pointer"
+  },
+  "customizer": {
+    "sections": [
+      {
+        "label": "Content",
+        "fields": [
+          {
+            "id": "contentType",
+            "label": "Content Type",
+            "type": "select",
+            "default": "heading",
+            "options": [
+              {
+                "label": "Heading",
+                "value": "heading"
+              },
+              {
+                "label": "Two Columns",
+                "value": "two-columns"
+              },
+              {
+                "label": "Custom",
+                "value": "custom"
+              }
+            ]
+          },
+          {
+            "id": "heading",
+            "label": "Heading",
+            "type": "text",
+            "default": "Every frame\nstill counts.",
+            "showWhen": {
+              "contentType": "heading"
+            }
+          },
+          {
+            "id": "subheading",
+            "label": "Subheading",
+            "type": "textarea",
+            "default": "Build a photographer or studio hero from layered stills that feel tactile, sequenced, and slightly cinematic.",
+            "showWhen": {
+              "contentType": "heading"
+            }
+          },
+          {
+            "id": "column1",
+            "label": "Column 1",
+            "type": "node",
+            "default": "<h2>One product.</h2><p>Dashboards, builders, editors \u2014 all in the same stack.</p>",
+            "showWhen": {
+              "contentType": "two-columns"
+            }
+          },
+          {
+            "id": "column2",
+            "label": "Column 2",
+            "type": "node",
+            "default": "<h2>Every module.</h2><p>The deck cycles through every screen on its own.</p>",
+            "showWhen": {
+              "contentType": "two-columns"
+            }
+          },
+          {
+            "id": "content",
+            "label": "Content",
+            "type": "node",
+            "default": "<h1>One product, every module.</h1>",
+            "showWhen": {
+              "contentType": "custom"
+            }
+          }
+        ]
+      },
+      {
+        "label": "Screenshots",
+        "fields": [
+          {
+            "id": "screenshot1",
+            "label": "Screenshot 1 (top)",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature1.avif",
+            "description": "The screenshot shown on the top card \u2014 front and centre."
+          },
+          {
+            "id": "screenshot2",
+            "label": "Screenshot 2",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature2.avif"
+          },
+          {
+            "id": "screenshot3",
+            "label": "Screenshot 3",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature3.avif"
+          },
+          {
+            "id": "screenshot4",
+            "label": "Screenshot 4",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature4.avif"
+          },
+          {
+            "id": "screenshot5",
+            "label": "Screenshot 5 (bottom)",
+            "type": "media",
+            "default": "https://crazygl.com/samples/nature5.avif"
+          }
+        ]
+      },
+      {
+        "label": "Stack",
+        "fields": [
+          {
+            "id": "cardCount",
+            "label": "Card count",
+            "type": "slider",
+            "default": 5,
+            "min": 2,
+            "max": 6,
+            "step": 1
+          },
+          {
+            "id": "stackOffsetX",
+            "label": "Stack offset X",
+            "type": "slider",
+            "default": 0.06,
+            "min": 0,
+            "max": 0.15,
+            "step": 0.005,
+            "description": "How far each card sits to the right of the one above it (resting)."
+          },
+          {
+            "id": "stackOffsetY",
+            "label": "Stack offset Y",
+            "type": "slider",
+            "default": 0.04,
+            "min": 0,
+            "max": 0.1,
+            "step": 0.005,
+            "description": "How far each card sits below the one above it (resting)."
+          },
+          {
+            "id": "stackOffsetZ",
+            "label": "Stack offset Z",
+            "type": "slider",
+            "default": 0.04,
+            "min": 0,
+            "max": 0.1,
+            "step": 0.005,
+            "description": "Spacing between cards along the depth axis. Larger = the stack is taller."
+          },
+          {
+            "id": "cardSize",
+            "label": "Card size",
+            "type": "slider",
+            "default": 2.4,
+            "min": 1.5,
+            "max": 3,
+            "step": 0.01,
+            "description": "World-units width of the cards. Larger = the stack fills more of the canvas."
+          },
+          {
+            "id": "groupOffsetX",
+            "label": "Group offset X",
+            "type": "slider",
+            "default": 0,
+            "min": -3,
+            "max": 3,
+            "step": 0.05,
+            "unit": "world",
+            "description": "Horizontal position of the whole card stack. 0 = centered."
+          },
+          {
+            "id": "groupOffsetY",
+            "label": "Group offset Y",
+            "type": "slider",
+            "default": 0,
+            "min": -2,
+            "max": 2,
+            "step": 0.05,
+            "unit": "world",
+            "description": "Vertical position of the whole card stack. 0 = centered."
+          },
+          {
+            "id": "cardCornerRadius",
+            "label": "Corner radius",
+            "type": "slider",
+            "default": 0.07,
+            "min": 0,
+            "max": 0.2,
+            "step": 0.005,
+            "unit": "rel"
+          }
+        ]
+      },
+      {
+        "label": "Flip cycle",
+        "fields": [
+          {
+            "id": "flipCycle",
+            "label": "Auto-cycle cards",
+            "type": "toggle",
+            "default": true,
+            "description": "Automatically cycle the front card to the back, revealing the next screen."
+          },
+          {
+            "id": "cycleInterval",
+            "label": "Cycle interval",
+            "type": "slider",
+            "default": 2.9,
+            "min": 1.5,
+            "max": 10,
+            "step": 0.1,
+            "unit": "s",
+            "showWhen": {
+              "flipCycle": true
+            },
+            "description": "Seconds between flips. The front card swoops up and around to the back of the stack."
+          }
+        ]
+      },
+      {
+        "label": "Motion",
+        "fields": [
+          {
+            "id": "cursorTilt",
+            "label": "Cursor tilt",
+            "type": "slider",
+            "default": 0.7,
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "description": "Strength of the pointer-driven parallax tilt. 0 = no tilt."
+          },
+          {
+            "id": "ambientFloat",
+            "label": "Ambient float",
+            "type": "slider",
+            "default": 0.35,
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "description": "Gentle continuous bob of the whole stack so it never reads as a static screenshot."
+          }
+        ]
+      },
+      {
+        "label": "Style",
+        "fields": [
+          {
+            "id": "edgeGlowColor",
+            "label": "Edge glow color",
+            "type": "color",
+            "default": "#ffb364"
+          },
+          {
+            "id": "edgeGlowStrength",
+            "label": "Edge glow strength",
+            "type": "slider",
+            "default": 0.5,
+            "min": 0,
+            "max": 1,
+            "step": 0.01
+          },
+          {
+            "id": "shadowStrength",
+            "label": "Card shadow strength",
+            "type": "slider",
+            "default": 0.55,
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "description": "Opacity of the soft shadow each card casts on the one below."
+          }
+        ]
+      },
+      {
+        "label": "Lighting",
+        "fields": [
+          {
+            "id": "keyColor",
+            "label": "Key light",
+            "type": "color",
+            "default": "#ffffff"
+          },
+          {
+            "id": "fillColor",
+            "label": "Fill light",
+            "type": "color",
+            "default": "#a0bcff"
+          },
+          {
+            "id": "screenBrightness",
+            "label": "Screen brightness",
+            "type": "slider",
+            "default": 0.4,
+            "min": 0,
+            "max": 1,
+            "step": 0.01,
+            "description": "Emissive boost on each card's screenshot. 0 = unlit, 1 = self-illuminated."
+          }
+        ]
+      },
+      {
+        "label": "Layout",
+        "fields": [
+          {
+            "id": "contentAlign",
+            "label": "Content alignment",
+            "type": "select",
+            "default": "start",
+            "options": [
+              {
+                "label": "Start",
+                "value": "start"
+              },
+              {
+                "label": "Center",
+                "value": "center"
+              },
+              {
+                "label": "End",
+                "value": "end"
+              }
+            ]
+          },
+          {
+            "id": "paddingX",
+            "label": "Horizontal padding",
+            "type": "slider",
+            "default": 64,
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px"
+          },
+          {
+            "id": "paddingY",
+            "label": "Vertical padding",
+            "type": "slider",
+            "default": 48,
+            "min": 0,
+            "max": 160,
+            "step": 4,
+            "unit": "px"
+          }
+        ]
+      },
+      {
+        "label": "Background",
+        "fields": [
+          {
+            "id": "bgTop",
+            "label": "Background top",
+            "type": "color",
+            "default": "#231918"
+          },
+          {
+            "id": "bgBottom",
+            "label": "Background bottom",
+            "type": "color",
+            "default": "#090607"
+          }
+        ]
+      },
+      {
+        "label": "Typography",
+        "fields": [
+          {
+            "id": "headingFontFamily",
+            "label": "Heading font",
+            "type": "font",
+            "default": "Inherit",
+            "showWhen": {
+              "contentType": "heading"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

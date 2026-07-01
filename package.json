@@ -1,0 +1,41 @@
+{
+  "name": "@crazygl/hero-cinematic-contact-sheet",
+  "version": "0.1.0",
+  "description": "Image and video frames bend through depth like a cinematic contact sheet, with soft light leaks and a photographer’s edit-table mood.",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./metadata.json": "./metadata.json",
+    "./style.css": "./style.css"
+  },
+  "files": [
+    "dist",
+    "metadata.json",
+    "style.css",
+    "LICENSE"
+  ],
+  "dependencies": {
+    "@crazygl/core": "^0.1.0",
+    "three": "^0.184.0"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "license": "Apache-2.0",
+  "author": "ybouane",
+  "homepage": "https://crazygl.com/hero/cinematic-contact-sheet",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazygl-com/hero-cinematic-contact-sheet.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
