@@ -3,7 +3,7 @@ name: cinematic-contact-sheet
 description: "Multiple frames behave like a cinematic contact sheet, bending through depth and holding a warm editorial mood."
 metadata:
   author: "@ybouane"
-  version: "0.1.0"
+  version: "0.1.1"
 ---
 
 ## How To Use This Skill

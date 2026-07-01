@@ -1,7 +1,7 @@
 {
   "name": "@crazygl/hero-cinematic-contact-sheet",
-  "version": "0.1.0",
-  "description": "Image and video frames bend through depth like a cinematic contact sheet, with soft light leaks and a photographer’s edit-table mood.",
+  "version": "0.1.1",
+  "description": "Cinematic Contact Sheet — Multiple frames behave like a cinematic contact sheet, bending through depth and holding a warm editorial mood. A customizable CrazyGL animated hero section — WebGL, React, drop-in.",
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -21,7 +21,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "@crazygl/core": "^0.1.0",
+    "@crazygl/core": "^0.1.1",
     "three": "^0.184.0"
   },
   "peerDependencies": {
@@ -37,5 +37,34 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "keywords": [
+    "three",
+    "3d",
+    "screenshot",
+    "stack",
+    "cards",
+    "saas",
+    "templates",
+    "dashboards",
+    "modules",
+    "editorial",
+    "portfolio",
+    "cinematic-contact-sheet",
+    "crazygl",
+    "hero",
+    "hero-section",
+    "webgl",
+    "react",
+    "animation",
+    "ui",
+    "landing-page",
+    "interactive",
+    "frontend",
+    "component",
+    "canvas"
+  ],
+  "bugs": {
+    "url": "https://github.com/crazygl-com/hero-cinematic-contact-sheet/issues"
   }
 }
